@@ -1,0 +1,4 @@
+# handlers 通常運用場景在部署完通知重新啟動
+- name: test handlers
+  debug:
+    msg: "Message from handlers"

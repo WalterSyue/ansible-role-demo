@@ -1,0 +1,13 @@
+- name: install git
+  become: true
+  package:
+    name: git
+    state: latest
+
+- name: checkout code from github
+  git:
+    repo: "{{ git_repo }}" #從 ../vars/main.yml 引用進來
+    dest: /root/flask-ansible-demo
+  notify: test handlers #從 ../handlers/main.yml 引用近來，必須是要這個 task 的狀態是 change
+
+- include_tasks: pip.yml #將另外一個 task yaml 檔引用進來
