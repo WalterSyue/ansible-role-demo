@@ -1,0 +1,5 @@
+## 透過 ansible-galaxy install -r requirements.yml 來下載外部 role 
+roles:
+  - src: https://github.com/xiaopeng163/ansible-galaxy-demo # github url
+    scm: git #拉取的方法
+    version: master # git branch
